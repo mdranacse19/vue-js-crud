@@ -14,6 +14,10 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        factory(App\ProductCategory::class, 500)->create()->each(function($post){
+            $post->save();
+        });
+
         $data = [
             [
                 'name' => 'MD. Rana',
